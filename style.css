@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color:#171a20;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+.desktop{
+    display: none;
+}
+@media (min-width: 1100px) {
+    .desktop{
+        display: initial;
+    }
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+header .logo{
+    width: 100px;
+    height: 20px;
+    color: inherit;
+}
+
+header a{
+    color: inherit;
+    text-decoration: none;
+    font-size: small;
+    font-weight: 500;
+}
+
+header nav a{
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+header nav a:hover{
+    background-color: rgb(220, 220, 220);
+}
+
+section{
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+section .content{
+    width: 100%;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-bottom: 80px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+}
+
+section a{
+    color: inherit;
+}
+
+section .buttons{
+    text-align: center;
+    width: 100%;
+}
+
+section .buttons a{
+    display: inline;
+    text-decoration: none;
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 8px 50px;
+    font-size: small;
+    font-weight: 500;
+    width: 90%;
+    margin: auto;
+}
+
+section .buttons a:first-child{
+    background-color: #444;
+    color: #fff;
+}
+
+section #last{
+    margin: auto;
+    width: 300px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+}
+
+section .buttons{
+    display: grid;
+    row-gap: 20px;
+}
+@media (min-width: 560px) {
+    section .buttons{
+        max-width: 640px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+}
+
+
+aside{
+    position: fixed;
+    right: -320px;
+    width: 290px;
+    background-color: white;
+    padding: 50px 30px;
+    z-index: 4;
+    height: 100vh;
+    transition: right .2s ease-out;
+    overflow: auto;
+}
+
+aside::webkit-scrollbar{
+    display: none;
+}
+
+aside.active{
+    right:0;
+}
+
+aside a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin-top: 5px;
+    padding: 8.2px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+aside button.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: 0;
+    font-size: 25px;
+    padding: 5px;
+    font-weight: 500;
+}
+aside button.close:hover{
+    cursor: pointer;
+}
+
+.backdrop{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+}
+
+.backdrop.active{
+    display: block;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 45px;
+}
+footer a{
+    text-decoration: none;
+    color: inherit;
+    padding-right: 10px;
+    font-size: small;
+    font-weight: 500;
+}
